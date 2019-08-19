@@ -1,0 +1,6 @@
+
+influxdb:
+  url: http://192.168.0.108:8086
+  username: admin
+  password: admin
+  database: example

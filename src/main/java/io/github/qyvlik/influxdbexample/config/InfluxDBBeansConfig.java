@@ -1,7 +1,6 @@
 package io.github.qyvlik.influxdbexample.config;
 
 import io.github.qyvlik.influxdbexample.config.properties.InfluxDBProperties;
-import org.influxdb.BatchOptions;
 import org.influxdb.InfluxDB;
 import org.influxdb.InfluxDBFactory;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
@@ -27,7 +26,9 @@ public class InfluxDBBeansConfig {
         influxDB.setDatabase(properties.getDatabase());
 
         // Flush every 2000 Points, at least every 100ms
-        influxDB.enableBatch(BatchOptions.DEFAULTS.actions(2000).flushDuration(100));
+        // influxDB.enableBatch(BatchOptions.DEFAULTS.actions(2000).flushDuration(100));
+
+        influxDB.enableBatch(properties.buildBatchOptions());
 
         return influxDB;
     }

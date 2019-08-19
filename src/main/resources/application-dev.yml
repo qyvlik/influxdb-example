@@ -4,3 +4,10 @@ influxdb:
   username: admin
   password: admin
   database: example
+  batch:
+    actions: 100
+    flush-duration: 1000
+    jitter-duration: 0
+    buffer-limit: 10000
+    precision: nanoseconds
+    consistency: ONE

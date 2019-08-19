@@ -23,16 +23,12 @@ public class TSDBServiceTest {
 
     @Test
     public void saveCostTime() throws Exception {
-
-
         CostTime costTime = new CostTime();
         costTime.setMeasurement("place_order_cost");
         costTime.setSymbol("btc-usdt");
         costTime.setCost(100L);
 
         tsdbService.saveCostTime(costTime);
-
-
     }
 
 }

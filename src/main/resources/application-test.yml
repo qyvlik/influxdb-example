@@ -4,9 +4,10 @@ influxdb:
   username: admin
   password: admin
   database: example
+  retention-policy: rp_default
   batch:
     actions: 1000
-    flush-duration: 1000
+    flush-duration: 500
     jitter-duration: 0
     buffer-limit: 10000
     precision: nanoseconds

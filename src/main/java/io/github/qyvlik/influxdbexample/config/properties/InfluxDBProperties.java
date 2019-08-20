@@ -11,6 +11,7 @@ public class InfluxDBProperties {
     private String username;
     private String password;
     private String database;
+    private String retentionPolicy;
     private BatchOptions batch;
 
     public String getUrl() {
@@ -43,6 +44,14 @@ public class InfluxDBProperties {
 
     public void setDatabase(String database) {
         this.database = database;
+    }
+
+    public String getRetentionPolicy() {
+        return retentionPolicy;
+    }
+
+    public void setRetentionPolicy(String retentionPolicy) {
+        this.retentionPolicy = retentionPolicy;
     }
 
     public BatchOptions getBatch() {

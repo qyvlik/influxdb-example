@@ -4,6 +4,7 @@ influxdb:
   username: admin
   password: admin
   database: example
+  retention-policy: rp_default
   batch:
     actions: 100
     flush-duration: 1000

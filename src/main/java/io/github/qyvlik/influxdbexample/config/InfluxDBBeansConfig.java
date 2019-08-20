@@ -25,6 +25,10 @@ public class InfluxDBBeansConfig {
                 properties.getPassword());
         influxDB.setDatabase(properties.getDatabase());
 
+        if (properties.getRetentionPolicy() != null && !"".equalsIgnoreCase(properties.getRetentionPolicy())) {
+            influxDB.setRetentionPolicy(properties.getRetentionPolicy());
+        }
+
         // Flush every 2000 Points, at least every 100ms
         // influxDB.enableBatch(BatchOptions.DEFAULTS.actions(2000).flushDuration(100));
 

@@ -14,6 +14,11 @@ import org.springframework.test.context.junit4.SpringRunner;
 @ActiveProfiles("test")
 public class TSDBServiceTest {
     @Test
+    public void showRP() throws Exception {
+        tsdbService.showRP();
+    }
+
+    @Test
     public void getCostTimeList() throws Exception {
         tsdbService.getCostTimeList();
     }

@@ -2,9 +2,9 @@ version: '2.2'
 
 services:
   tsdb:
-    image: influxdb:1.7.7
+    image: influxdb:latest
     volumes:
-      - ./influxdb:/docker-entrypoint-initdb.d/
+      - ./influxdb:/docker-entrypoint-initdb.d/:ro
     ports:
       - "8086:8086"
       - "8083:8083"
@@ -12,6 +12,7 @@ services:
     environment:
       - INFLUXDB_ADMIN_USER=admin
       - INFLUXDB_ADMIN_PASSWORD=admin
+      - INFLUXDB_DB=example
       - INFLUXDB_HTTP_ENABLED=true
       - INFLUXDB_HTTP_AUTH_ENABLED=true
-    restart: always
+#    restart: always

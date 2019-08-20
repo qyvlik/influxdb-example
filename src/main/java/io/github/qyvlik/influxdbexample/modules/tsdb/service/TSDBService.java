@@ -33,4 +33,9 @@ public class TSDBService {
         logger.info("getCostTimeList:{}", queryResult);
     }
 
+    public void showRP() {
+        QueryResult queryResult = influxDB.query(new Query("SHOW RETENTION POLICIES ON \"example\""));
+        logger.info("showRP:{}", queryResult);
+    }
+
 }
